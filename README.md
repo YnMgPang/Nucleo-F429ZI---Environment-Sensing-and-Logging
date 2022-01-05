@@ -1,32 +1,32 @@
 # Nucleo-F429ZI - Environment Parameter Sensing and Logging - Ethernet
 
-<img src="images/setup.jpg" width="500" />
+<img src="Images/setup.jpg" width="500" />
 
-1 - About this project
-2 - Required Software
-3 - Required Hardware
-4 - Hardware setup
-5 - Software setup
-6 - Code & Settings
-7 - Operation
-8 - Known Issues
-9 - Folder Structure
-10 - Reference Sites
-11 - Todos
+1 - About this project  
+2 - Required Software  
+3 - Required Hardware  
+4 - Hardware setup  
+5 - Software setup  
+6 - Code & Settings  
+7 - Operation  
+8 - Known Issues  
+9 - Folder Structure  
+10 - Reference Sites  
+11 - Todos  
 
 # 1 - About this project
 This is a project based on the Nucleo-F429ZI microcontroller board and the SVM30 sensor module. The programming language is C. The aim is to capture several environmental parameters, and send them through the Ethernet to a data-logging system/computer.
 
- - Tasks
- -- Sensor measures: Temprature, Relative Humidity(RH), Carbon Dioxide equivalent(CO2eq) and Total Volatile Organic Compounds(TVOC).
- -- Board processes raw data to get calculated, readable values.
- -- Board transmit data through the UDP protocol to a designated IP address.
+- Tasks
+  - Sensor measures: Temprature, Relative Humidity(RH), Carbon Dioxide equivalent(CO2eq) and Total Volatile Organic Compounds(TVOC).
+  - Board processes raw data to get calculated, readable values.
+  - Board transmit data through the UDP protocol to a designated IP address.
 
- - Additional features
- -- Dedicated sensor library
- -- Sleep mode for board -> active only during a defined, recurring period of data capture, calculation, and transmission
- -- Real-time data visualization -> Matlab script
- -- Network packet capture -> Wireshark
+- Additional features
+  - Dedicated sensor library
+  - Sleep mode for board -> active only during a defined, recurring period of data capture, calculation, and transmission
+  - Real-time data visualization -> Matlab script
+  - Network packet capture -> Wireshark
 
 # 2 - Required Software
 | Name | Usage |
@@ -44,15 +44,16 @@ This is a project based on the Nucleo-F429ZI microcontroller board and the SVM30
 | Nucleo-F429ZI | Microcontroller board |
 | Computer | Data-logging |
 
- - Board alternatives with the following resources: 
-  -- I2C bus * 1
-  -- Sleep mode capability
-  -- Power supply: 5V, 49mA
-  -- Ethernet with lwIP stack support    
-  -- General purpose interrupt timer * 1
+- Compatible board alternatives with the following resources: 
+  - I2C bus * 1
+  - Sleep mode capability
+  - Power supply: 5V, 49mA
+  - Ethernet with lwIP stack support    
+  - General purpose interrupt timer * 1
 
 # 4 - Hardware setup
-<img src="images/connections.jpg" width="500" />
+<img src="Images/connections.jpg" width="500" />
+
  | Pin (board) | To Pin (Sensor) |
  | ------ | ------ |
  | CN8 - 5V | 3 - VDD |
@@ -82,17 +83,18 @@ This is a project based on the Nucleo-F429ZI microcontroller board and the SVM30
 
 # 6 - Code & Settings
 
-*Below are settings that could be tweaked to quickly adapt to different setup environments. For full settings, please check the files themselves.
+*Below are settings that could be tweaked to quickly adapt to different setup environments. For full settings, please check the files.
 
 - Clock settings - Clean_UDP_Remote.ioc
-<img src="images/clock settings.png" width="500" />
+<img src="Images/clock settings.png" width="200" />
 
 - Network settings - Clean_UDP_Remote.ioc
-<img src="images/network settings.png" width="500" />
+<img src="Images/network settings.png" width="500" />
 
-- Packet message settings - main.c
--- All four measurements are sent in one single packet as char. strings.
--- Modify measurement string separators in sprintf() in void doTasks(struct pbuf *pbufPtr), 
+- Packet message settings
+  - main.c
+  - All four measurements are sent in one single packet as char. strings.
+  - Modify measurement string separators in sprintf() in void doTasks(struct pbuf *pbufPtr), 
 
 # 7 - Operation
  | Start |  |
@@ -111,9 +113,8 @@ This is a project based on the Nucleo-F429ZI microcontroller board and the SVM30
  | ------ | ------ |
  | Board turn-off | Directly turn off power source |
  
- Examples - Wireshark and Matlab
- <img src="images/Wireshark.png" width="500" />
- <img src="images/Matlab.png" width="500" />
+ - Examples - Wireshark and Matlab  
+ <img src="Images/Wireshark.png" width="500" /> <img src="Images/Matlab.png" width="400" />
  
 # 8 - Known issues
  - I2C pin mismatch
@@ -161,8 +162,7 @@ This is a project based on the Nucleo-F429ZI microcontroller board and the SVM30
 | LwIP for STM32F4 | [UM1713 User manual][PlLwIP] |
 
 # 11 - Todos
- - Use TCP mode
- - Send HTTP packets
+ - Implement TCP mode
 
    [PlSVM30]: <https://eu.mouser.com/datasheet/2/682/Sensirion_Gas_Sensors_SVM30_Datasheet-1539043.pdf>
    [PlNucleo]: <https://www.st.com/en/evaluation-tools/nucleo-f429zi.html#documentation>
