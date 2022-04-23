@@ -1,6 +1,6 @@
 # Nucleo-F429ZI - Environment Parameter Sensing and Logging - Ethernet
 
-<img src="Images/setup.jpg" width="500" />
+<img src="Images/setup.jpg" width="500" />  <img src="Images/Matlab.png" width="300" />
 
 1 - About this project  
 2 - Required Software  
