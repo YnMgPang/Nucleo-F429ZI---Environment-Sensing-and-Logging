@@ -15,7 +15,7 @@
 11 - Todos  
 
 # 1 - About this project
-This is a project based on the Nucleo-F429ZI microcontroller board and the SVM30 sensor module. The programming language is C. The aim is to capture several environmental parameters, and send them through the Ethernet to a data-logging system/computer.
+This is a project based on the Nucleo-F429ZI microcontroller board and the SVM30 sensor module. The programming language is C. The aim is to capture several environmental parameters, and send them through the Ethernet to a data-logging system/computer. This project contributed to a research at the ISEA institute of RWTH Aachen University, Germany.
 
 - Tasks
   - Sensor measures: Temprature, Relative Humidity(RH), Carbon Dioxide equivalent(CO2eq) and Total Volatile Organic Compounds(TVOC).
