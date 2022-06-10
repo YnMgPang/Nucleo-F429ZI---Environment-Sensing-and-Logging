@@ -38,8 +38,20 @@ hold on
 stopTime = '12/01 13:40';           %effectively non-stop
 %%----------------------------------------------------------- Collect data
 count = 1;
-
 loops = 0;
+
+plotT = plot(ax1, time,T, '-r');
+hold on
+plotRH = plot(ax2, time,RH, '-k');
+plotCO2eq = plot(ax3, time,CO2eq, '--b');
+plotTVOC = plot(ax4, time,TVOC, '-m');
+
+%%------------------------------------------- ONLY COLLECTING 100K SAMPLES
+time = NaT(1, 100000);
+T = zeros(1, 100000);
+RH = zeros(1, 100000);
+CO2eq = zeros(1, 100000);
+TVOC = zeros(1, 100000);
 
 while ~isequal(datestr(now,'mm/DD HH:MM'),stopTime)
         
@@ -60,11 +72,11 @@ while ~isequal(datestr(now,'mm/DD HH:MM'),stopTime)
     CO2eq(count) = str2double(str_CO2eq);
     TVOC(count) = str2double(str_TVOC);   
     
-    %---------------------------------------------------------update plots
-    plot(ax1, time,T, '-r');              %auto-target current figure
-    plot(ax2, time,RH, '-k');             %auto-target current figure
-    plot(ax3, time,CO2eq, '--b');          %auto-target current figure
-    plot(ax4, time,TVOC, '-m');           %auto-target current figure
+    %---------------------------------------------------------update plots   
+    set(plotT,'XData',time,'YData', T);
+    set(plotRH,'XData',time,'YData', RH);
+    set(plotCO2eq,'XData',time,'YData', CO2eq);
+    set(plotTVOC,'XData',time,'YData', TVOC);
     
     pause(0.1);
     count = count +1;
