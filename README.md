@@ -157,8 +157,8 @@ This is a project based on the Nucleo-F429ZI microcontroller board and the SVM30
 | Name | Link |
 | ------ | ------ |
 | SVM30 datasheet | [Mouser Electronics][PlSVM30] |
-| NucleoF429ZI pintout | [Mbed][PlMbed] 
-| NucleoF429ZI datasheet | [STMicroelectronics][PlNucleo] 
+| NucleoF429ZI pintout | [Mbed][PlMbed] |
+| NucleoF429ZI datasheet | [STMicroelectronics][PlNucleo] |
 | LwIP for STM32F4 | [UM1713 User manual][PlLwIP] |
 
 # 11 - Todos
